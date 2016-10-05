@@ -1,0 +1,16 @@
+<h2>Rent a cat all ready</h2>
+<ul>
+  <% Cat.all.each do |cat| %>
+  <li>
+    <% @cat = cat %>
+    name: <%=  cat.name%>
+    color: <%=  cat.color%>
+    sex: <%=  cat.sex%>
+
+    <%= link_to("Individual cat page", cat_url(cat.id)) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to("Create new cat", new_cat_url) %><br>
+<%= link_to("Request a cat rental", new_cat_rental_request_url) %>
